@@ -5,3 +5,9 @@ services:
     build: .
     ports:
       - 3001:3001
+    networks:
+      - e0-2023-1-smoralesw_e0_network
+
+networks:
+  e0-2023-1-smoralesw_e0_network:
+    external: true

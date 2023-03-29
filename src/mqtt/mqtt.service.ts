@@ -24,7 +24,7 @@ export class MqttService {
         if (err) {
           console.log('Error subscribing to topic:', err);
         } else {
-          console.log('Subscribed to topic!');
+          console.log('Subscribed to events/chile!');
         }
       });
     });
@@ -32,7 +32,7 @@ export class MqttService {
       console.log('Received message:', message.toString());
 
       const data = JSON.parse(message.toString());
-      const url = 'http://localhost:3000/events/create';
+      const url = 'http://e0_api:3000/events/create';
 
       this.httpService.post(url, data).toPromise()
         .then((res) => {
